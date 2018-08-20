@@ -31,10 +31,10 @@ class CKEditor extends React.Component {
     }
   }
 
-  componentWillReceiveProps(props) {
+  componentDidUpdate() {
     const editor = this.editorInstance;
-    if (editor && editor.getData() !== props.content) {
-      editor.setData(props.content);
+    if (editor && editor.getData() !== this.props.content) {
+      editor.setData(this.props.content);
     }
   }
 
